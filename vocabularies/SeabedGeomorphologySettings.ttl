@@ -12,7 +12,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :aggregation
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/> ;
     skos:definition "currently under working group consultation"@en ;
     skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
     skos:inScheme cs: ;
@@ -24,7 +23,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :alluvial
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/> ;
     skos:definition "currently under working group consultation"@en ;
     skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
     skos:inScheme cs: ;
@@ -55,7 +53,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :coastal_fan_delta
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/> ;
     skos:definition "currently under working group consultation"@en ;
     skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
     skos:inScheme cs: ;
@@ -75,7 +72,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :fluvial_fan_delta
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/> ;
     skos:definition "currently under working group consultation"@en ;
     skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
     skos:inScheme cs: ;
@@ -87,7 +83,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :sediment_trapped_bound
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/> ;
     skos:definition "currently under working group consultation"@en ;
     skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
     skos:inScheme cs: ;
@@ -1641,7 +1636,7 @@ Cf. COASTAL PRO-DELTA"""@en ;
     skos:historyNote "2026-05: This Concept was updated in 2026 following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
     skos:inScheme cs: ;
     skos:narrower
-        :non_volcanic ,
+        :non-volcanic ,
         :volcanic ;
     skos:prefLabel "guyot"@en ;
     schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/BGU-Type_BGU-T"^^xsd:anyURI ;
@@ -2380,10 +2375,10 @@ Cf. COASTAL PRO-DELTA"""@en ;
     schema:status astatus:stable ;
 .
 
-:non_volcanic
+:non-volcanic
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/> ;
+    skos:broader :guyot ;
     skos:definition "currently under working group consultation"@en ;
     skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
     skos:inScheme cs: ;
@@ -3801,7 +3796,7 @@ Cf. "fan/apron" in Harris et al., (2014), cf. APRON (MORPHOLOGY)."""@en ;
 :volcanic
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/> ;
+    skos:broader :guyot ;
     skos:definition "currently under working group consultation"@en ;
     skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
     skos:inScheme cs: ;
