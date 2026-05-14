@@ -61,26 +61,37 @@ def get_label(graph: Graph, uri: URIRef, lang: str) -> str:
 # ── Tree builder ──────────────────────────────────────────────────────────────
 
 def build_children(graph: Graph) -> dict:
-    """Return {parent_uri: [child_uri, …]} from skos:narrower / skos:broader."""
-    children: dict = {}
+    """Return {parent_uri: [child_uri, …]} from skos:narrower / skos:broader.
 
-    # Collect all concepts
-    all_concepts = set(graph.subjects(RDF.type, SKOS.Concept))
-    for uri in all_concepts:
-        children.setdefault(uri, [])
+    skos:broader and skos:narrower are inverse properties of each other, so a
+    single parent→child edge can be stated either way (or both).  We normalise
+    every edge to the canonical parent→child direction and deduplicate so that
+    redundant reciprocal declarations don't produce duplicate children.
+    """
+    # Seed every known concept with an empty list
+    children: dict = {
+        uri: []
+        for uri in graph.subjects(RDF.type, SKOS.Concept)
+        if isinstance(uri, URIRef)
+    }
 
-    # skos:narrower  (parent → child)
+    # Use a set of (parent, child) pairs to deduplicate across both properties
+    edges: set = set()
+
+    # skos:narrower  subject=parent, object=child  (parent → child)
     for parent, _, child in graph.triples((None, SKOS.narrower, None)):
-        if isinstance(child, URIRef):
-            children.setdefault(parent, [])
-            children[parent].append(child)
+        if isinstance(parent, URIRef) and isinstance(child, URIRef):
+            edges.add((parent, child))
 
-    # skos:broader   (child → parent)  — inverse direction
+    # skos:broader   subject=child,  object=parent (child → parent, i.e. parent → child inverted)
     for child, _, parent in graph.triples((None, SKOS.broader, None)):
-        if isinstance(parent, URIRef):
-            children.setdefault(parent, [])
-            if child not in children[parent]:
-                children[parent].append(child)
+        if isinstance(parent, URIRef) and isinstance(child, URIRef):
+            edges.add((parent, child))   # normalise to parent→child
+
+    for parent, child in edges:
+        children.setdefault(parent, [])
+        children.setdefault(child, [])
+        children[parent].append(child)
 
     return children
 
