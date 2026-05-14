@@ -9,93 +9,6 @@ PREFIX schema: <https://schema.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-:aggregation
-    a skos:Concept ;
-    rdfs:isDefinedBy cs: ;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/> ;
-    skos:definition "currently under working group consultation"@en ;
-    skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
-    skos:inScheme cs: ;
-    skos:prefLabel "aggregation"@en ;
-    schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/basic_geomorphic_unit_BGU"^^xsd:anyURI ;
-    schema:status astatus:experimental ;
-.
-
-:alluvial
-    a skos:Concept ;
-    rdfs:isDefinedBy cs: ;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/> ;
-    skos:definition "currently under working group consultation"@en ;
-    skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
-    skos:inScheme cs: ;
-    skos:prefLabel "alluvial"@en ;
-    schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/BGU-Type_BGU-T"^^xsd:anyURI ;
-    schema:status astatus:experimental ;
-.
-
-:coastal_delta_lobe
-    a skos:Concept ;
-    rdfs:isDefinedBy cs: ;
-    skos:definition "currently under working group consultation"@en ;
-    skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
-    skos:inScheme cs: ;
-    skos:narrower
-        :bayhead ,
-        :coastal_delta-front ,
-        :coastal_pro-delta ,
-        :lower ,
-        :shelf_edge ,
-        :tidal_delta ,
-        :upper ;
-    skos:prefLabel "Coastal delta lobe"@en ;
-    schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/basic_geomorphic_unit_BGU"^^xsd:anyURI ;
-    schema:status astatus:experimental ;
-.
-
-:coastal_fan_delta
-    a skos:Concept ;
-    rdfs:isDefinedBy cs: ;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/> ;
-    skos:definition "currently under working group consultation"@en ;
-    skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
-    skos:inScheme cs: ;
-    skos:narrower
-        :bayhead ,
-        :coastal_delta-front ,
-        :coastal_pro-delta ,
-        :lower ,
-        :shelf_edge ,
-        :tidal_delta ,
-        :upper ;
-    skos:prefLabel "Coastal fan delta"@en ;
-    schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/basic_geomorphic_unit_BGU"^^xsd:anyURI ;
-    schema:status astatus:experimental ;
-.
-
-:fluvial_fan_delta
-    a skos:Concept ;
-    rdfs:isDefinedBy cs: ;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/> ;
-    skos:definition "currently under working group consultation"@en ;
-    skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
-    skos:inScheme cs: ;
-    skos:prefLabel "Fluvial fan delta"@en ;
-    schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/basic_geomorphic_unit_BGU"^^xsd:anyURI ;
-    schema:status astatus:experimental ;
-.
-
-:sediment_trapped_bound
-    a skos:Concept ;
-    rdfs:isDefinedBy cs: ;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/> ;
-    skos:definition "currently under working group consultation"@en ;
-    skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
-    skos:inScheme cs: ;
-    skos:prefLabel "sediment trapped/bound"@en ;
-    schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/basic_geomorphic_unit_BGU"^^xsd:anyURI ;
-    schema:status astatus:experimental ;
-.
-
 :De_Geer_moraine
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
@@ -179,6 +92,30 @@ Cf. "abyss - hills" in Harris et al., (2014)."""@en ;
     skos:prefLabel "agglutinating"@en ;
     schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/BGU-Type_BGU-T"^^xsd:anyURI ;
     schema:status astatus:stable ;
+.
+
+:aggregation
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "currently under working group consultation"@en ;
+    skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "aggregation"@en ;
+    skos:topConceptOf cs: ;
+    schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/basic_geomorphic_unit_BGU"^^xsd:anyURI ;
+    schema:status astatus:experimental ;
+.
+
+:alluvial
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "currently under working group consultation"@en ;
+    skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "alluvial"@en ;
+    skos:topConceptOf cs: ;
+    schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/BGU-Type_BGU-T"^^xsd:anyURI ;
+    schema:status astatus:experimental ;
 .
 
 :anchor_drag
@@ -637,6 +574,46 @@ Cf. "abyss - hills" in Harris et al., (2014)."""@en ;
     skos:prefLabel "closed lagoon"@en ;
     schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/BGU-Type_BGU-T"^^xsd:anyURI ;
     schema:status astatus:stable ;
+.
+
+:coastal_delta_lobe
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "currently under working group consultation"@en ;
+    skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
+    skos:inScheme cs: ;
+    skos:narrower
+        :bayhead ,
+        :coastal_delta-front ,
+        :coastal_pro-delta ,
+        :lower ,
+        :shelf_edge ,
+        :tidal_delta ,
+        :upper ;
+    skos:prefLabel "Coastal delta lobe"@en ;
+    skos:topConceptOf cs: ;
+    schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/basic_geomorphic_unit_BGU"^^xsd:anyURI ;
+    schema:status astatus:experimental ;
+.
+
+:coastal_fan_delta
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "currently under working group consultation"@en ;
+    skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
+    skos:inScheme cs: ;
+    skos:narrower
+        :bayhead ,
+        :coastal_delta-front ,
+        :coastal_pro-delta ,
+        :lower ,
+        :shelf_edge ,
+        :tidal_delta ,
+        :upper ;
+    skos:prefLabel "Coastal fan delta"@en ;
+    skos:topConceptOf cs: ;
+    schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/basic_geomorphic_unit_BGU"^^xsd:anyURI ;
+    schema:status astatus:experimental ;
 .
 
 :coastal_fjord
@@ -1305,6 +1282,18 @@ Cf. COASTAL DELTA-FRONT"""@en ;
     schema:status astatus:stable ;
 .
 
+:fluvial_fan_delta
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "currently under working group consultation"@en ;
+    skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Fluvial fan delta"@en ;
+    skos:topConceptOf cs: ;
+    schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/basic_geomorphic_unit_BGU"^^xsd:anyURI ;
+    schema:status astatus:experimental ;
+.
+
 :fluvial_fan_lobe
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
@@ -1629,21 +1618,6 @@ Cf. COASTAL PRO-DELTA"""@en ;
     skos:historyNote "2026-05: This Concept was updated in 2026 following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
     skos:inScheme cs: ;
     skos:prefLabel "gully"@en ;
-    schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/BGU-Type_BGU-T"^^xsd:anyURI ;
-    schema:status astatus:stable ;
-.
-
-:guyot
-    a skos:Concept ;
-    rdfs:isDefinedBy cs: ;
-    skos:broader :Solid_Earth_Setting ;
-    skos:definition "Flat-topped SEAMOUNTS or PLEATEAUS, usually former VOLCANOES, are formed by gradual subsidence through different stages. In many cases, they are capped by drowned atoll REEFS and pelagic sediment (modified after Harff et al., 2016)."@en ;
-    skos:historyNote "2026-05: This Concept was updated in 2026 following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
-    skos:inScheme cs: ;
-    skos:narrower
-        :non_volcanic ,
-        :volcanic ;
-    skos:prefLabel "guyot"@en ;
     schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/BGU-Type_BGU-T"^^xsd:anyURI ;
     schema:status astatus:stable ;
 .
@@ -2380,10 +2354,10 @@ Cf. COASTAL PRO-DELTA"""@en ;
     schema:status astatus:stable ;
 .
 
-:non_volcanic
+:non-volcanic
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/> ;
+    skos:broader :guyot ;
     skos:definition "currently under working group consultation"@en ;
     skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
     skos:inScheme cs: ;
@@ -3204,6 +3178,18 @@ Cf. "seamount" in Harris et al., (2014)."""@en ;
     schema:status astatus:stable ;
 .
 
+:sediment_trapped_bound
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "currently under working group consultation"@en ;
+    skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "sediment trapped/bound"@en ;
+    skos:topConceptOf cs: ;
+    schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/basic_geomorphic_unit_BGU"^^xsd:anyURI ;
+    schema:status astatus:experimental ;
+.
+
 :shear-margin_moraine
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
@@ -3801,7 +3787,7 @@ Cf. "fan/apron" in Harris et al., (2014), cf. APRON (MORPHOLOGY)."""@en ;
 :volcanic
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/> ;
+    skos:broader :guyot ;
     skos:definition "currently under working group consultation"@en ;
     skos:historyNote "2026-05: This Concept was added in 2026 with status Experimental following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
     skos:inScheme cs: ;
@@ -4088,6 +4074,21 @@ Cf. COASTAL DELTA"""@en ;
         :river_valley ;
     skos:prefLabel "Fluvial subaerial valley"@en ;
     schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/basic_geomorphic_unit_BGU"^^xsd:anyURI ;
+    schema:status astatus:stable ;
+.
+
+:guyot
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :Solid_Earth_Setting ;
+    skos:definition "Flat-topped SEAMOUNTS or PLEATEAUS, usually former VOLCANOES, are formed by gradual subsidence through different stages. In many cases, they are capped by drowned atoll REEFS and pelagic sediment (modified after Harff et al., 2016)."@en ;
+    skos:historyNote "2026-05: This Concept was updated in 2026 following revision and maintenance of the ISGM 2-part geomorphic classification scheme." ;
+    skos:inScheme cs: ;
+    skos:narrower
+        :non-volcanic ,
+        :volcanic ;
+    skos:prefLabel "guyot"@en ;
+    schema:citation "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/BGU-Type_BGU-T"^^xsd:anyURI ;
     schema:status astatus:stable ;
 .
 
@@ -5187,7 +5188,13 @@ This is one of four linked ISGM-WG vocabularies. Definitions in this vocabulary 
         :Karst_Process ,
         :Marine_Setting ,
         :Mass_Movement_Process ,
-        :Solid_Earth_Setting ;
+        :Solid_Earth_Setting ,
+        :aggregation ,
+        :alluvial ,
+        :coastal_delta_lobe ,
+        :coastal_fan_delta ,
+        :fluvial_fan_delta ,
+        :sediment_trapped_bound ;
     skos:historyNote """2026-05: Removed BGU and BGU-T annotations from Concepts and instead added citation links for them.
 
 This vocabulary describes the glossary in Part 2 of the two-part seabed geomorphology classification scheme DOI: 10.5281/zenodo.7804019. This vocabulary was published in 2025 but following Phase Three of the Ocean Best Practice (OBP) approach, the concepts in 2026 have gone through revision and maintenance, which are reflected in this most recent update."""@en ;
