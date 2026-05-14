@@ -59,7 +59,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :data_acquisition
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:broader :sample_acquisition_and_management ;
     skos:definition "Data acquisition related to the systematic processes of gathering observations and measurements, and related analytical techniques and methodologies, including sample preparation techniques."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "data acquisition"@en ;
@@ -81,11 +80,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :geoinformatics
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
+    skos:broader :information_management ;
     skos:altLabel "geomatics"@en ;
     skos:definition "Geoinformatics is a scientific field primarily within the domains of Computer Science and technical geography. It focuses on the programming of applications, spatial data structures, and the analysis of objects and space-time phenomena related to the surface and underneath of Earth and other celestial bodies. The field develops software and web services to model and analyse spatial data, serving the needs of geosciences and related scientific and engineering disciplines. The term is often used interchangeably with Geomatics, although they are not exactly same. The field of geomatics is a comprehensive discipline encompassing both geodesy and geoinformatics, thus offering a more extensive scope."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "geoinformatics"@en ;
-    skos:topConceptOf cs: ;
     schema:citation "https://en.wikipedia.org/wiki/Geoinformatics"^^xsd:anyURI ;
     schema:status astatus:experimental ;
 .
@@ -130,6 +129,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     skos:inScheme cs: ;
     skos:prefLabel "hydrology"@en ;
     skos:topConceptOf cs: ;
+    skos:narrower :hydrogeology , :hydrogeochemistry ;
     schema:citation "https://www.usgs.gov/water-science-school/science/what-hydrology#Hydrology"^^xsd:anyURI ;
     schema:status astatus:experimental ;
 .
@@ -227,17 +227,27 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:isDefinedBy cs: ;
     skos:definition "Sample acquisition is related to the collection/procurement, handling, tracking, storing, and retrieving of primary geoscience material (typically, but not exclusively, a rock, mineral, fossil or soil) collected in the field or from materials collected in the field (e.g. drillcore)"@en ;
     skos:inScheme cs: ;
-    skos:narrower :sample_acquisition_and_management ;
+    skos:broader :sample_acquisition_and_management ;
     skos:prefLabel "sample acquisition"@en ;
-    skos:topConceptOf cs: ;
     schema:citation "https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management"^^xsd:anyURI ;
+    schema:status astatus:experimental ;
+.
+
+:data_acquisition
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :data_management ;
+    skos:definition "Data acquisition related to the systematic processes of gathering observations and measurements, and related analytical techniques and methodologies, including sample preparation techniques."@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "data acquisition"@en ;
+    schema:citation "https://linked.data.gov.au/def/gswa-vocabulary-themes/data-acquisition"^^xsd:anyURI ;
     schema:status astatus:experimental ;
 .
 
 :data_management
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:broader :sample_acquisition_and_management ;
+    skos:broader :information_management ;
     skos:definition "Data Management is the development, execution, and supervision of plans, policies, programs, and practices that deliver, control, protect, and enhance the value of data and information assets throughout their lifecycles. It encompasses a range of disciplines and processes that collectively enable organizations to derive meaningful insights, make informed decisions, and maintain compliance with regulatory standards."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "data management"@en ;
@@ -264,7 +274,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     skos:inScheme cs: ;
     skos:narrower :hydrogeochemistry ;
     skos:prefLabel "geochemistry"@en ;
-    skos:topConceptOf cs: ;
+    skos:broader :geology ;
     schema:citation "https://glossary.americangeosciences.org/term/geochemistry"^^xsd:anyURI ;
     schema:status astatus:experimental ;
 .
@@ -348,13 +358,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :sample_acquisition_and_management
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:broader :data_management ;
     skos:definition "Sample acquisition and management is related to the collection/procurement, handling, tracking, storing, and retrieving of primary geoscience material (typically, but not exclusively, a rock, mineral, fossil or soil) collected in the field or from materials collected in the field (e.g. drillcore), as well as derived specimens from such materials for the purpose of analysis and research. Included are vocabularies related to collections as single entities."@en ;
     skos:inScheme cs: ;
-    skos:narrower
-        :data_acquisition ,
-        :sample_acquisition ;
     skos:prefLabel "sample acquisition and management"@en ;
+    skos:narrower :sample_acquisition ;
     schema:citation "https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management"^^xsd:anyURI ;
     schema:status astatus:experimental ;
 .
@@ -379,6 +386,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :geophysics
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
+    skos:broader :geology ;
     skos:definition "Geophysics is the investigation of the solid and molten Earth using physical principles which allow studies on large scales and of the otherwise inaccessible deep Earth. Geophysical methods are used to study large scale Earth Structure, to measure the exact shape and size of the planet (Geodesy), to study the dynamics of the Earth’s interior and tectonic plates (Geodynamics), to study the history of Earth’s magnetic field and its present state (Geomagnetism), to study the physical properties of rocks and minerals at or near the surface, as well as those in the core (Mineral Physics), and finally, to study the physical causes and effects of earthquakes (Seismology)."@en ;
     skos:inScheme cs: ;
     skos:narrower
@@ -388,7 +396,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         :radiometrics ,
         :seismology ;
     skos:prefLabel "geophysics"@en ;
-    skos:topConceptOf cs: ;
     schema:citation "https://www.sciencedirect.com/science/chapter/referencework/pii/B9780124095489053549#s0015"^^xsd:anyURI ;
     schema:status astatus:experimental ;
 .
@@ -399,16 +406,13 @@ cs:
     skos:definition "These geoscience data themes are used by Geoscience Australia to enable sorting of content in their registers."@en ;
     skos:hasTopConcept
         :administration ,
-        :data_management ,
         :earth_observation ,
-        :geochemistry ,
         :geography ,
-        :geoinformatics ,
         :geology ,
-        :geophysics ,
         :hydrology ,
         :information_management ,
-        :legislation ;
+        :legislation ,
+        :sample_acquisition_and_management ;
     skos:historyNote "This vocabulary is a refresh of a previous GA data classification. The definitions have been sourced from other Australian Geological Surveys where possible. This was created for the purpose of grouping related vocabularies and other GA products to enable easy sorting by data type." ;
     skos:prefLabel "GA Register Data Themes"@en ;
     prov:qualifiedAttribution
