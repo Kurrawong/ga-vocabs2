@@ -1,0 +1,22 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?c
+WHERE {
+    ?c a skos:Concept .
+
+    MINUS {
+        ?c skos:broader ?x
+    }
+
+    MINUS {
+        ?y skos:narrower ?c .
+    }
+
+    MINUS {
+        ?c skos:topConceptOf ?cs .
+    }
+
+    MINUS {
+        ?cs2 skos:topConceptOf ?c .
+    }
+}

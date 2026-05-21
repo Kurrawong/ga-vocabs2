@@ -10,29 +10,6 @@ PREFIX schema: <https://schema.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-:geochronology
-    a skos:Concept ;
-    rdfs:isDefinedBy cs: ;
-    skos:broader :geology ;
-    skos:definition "Geochronology is a discipline of geoscience which measures the age of earth materials and provides the temporal framework in which other geoscience data can be interpreted in the context of Earth history."@en ;
-    skos:inScheme cs: ;
-    skos:prefLabel "geochronology"@en ;
-    schema:citation "https://www.ga.gov.au/scientific-topics/disciplines/geochronology"^^xsd:anyURI ;
-    schema:status astatus:experimental ;
-.
-
-:m-types
-    a skos:Collection ;
-    rdfs:isDefinedBy cs: ;
-    skos:definition "Concepts starting with \"M\""@en ;
-    skos:historyNote "Made for testing the example file" ;
-    skos:inScheme cs: ;
-    skos:member
-        <http://example.com/voc/rock-types/metamorphic> ,
-        :marble ;
-    skos:prefLabel "M-Types"@en ;
-.
-
 :administration
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
@@ -59,7 +36,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :data_acquisition
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:broader :sample_acquisition_management ;
+    skos:broader :data_management ;
     skos:definition "Data acquisition related to the systematic processes of gathering observations and measurements, and related analytical techniques and methodologies, including sample preparation techniques."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "data acquisition"@en ;
@@ -78,14 +55,25 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     schema:status astatus:experimental ;
 .
 
+:geochronology
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :geology ;
+    skos:definition "Geochronology is a discipline of geoscience which measures the age of earth materials and provides the temporal framework in which other geoscience data can be interpreted in the context of Earth history."@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "geochronology"@en ;
+    schema:citation "https://www.ga.gov.au/scientific-topics/disciplines/geochronology"^^xsd:anyURI ;
+    schema:status astatus:experimental ;
+.
+
 :geoinformatics
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "geomatics"@en ;
+    skos:broader :information_management ;
     skos:definition "Geoinformatics is a scientific field primarily within the domains of Computer Science and technical geography. It focuses on the programming of applications, spatial data structures, and the analysis of objects and space-time phenomena related to the surface and underneath of Earth and other celestial bodies. The field develops software and web services to model and analyse spatial data, serving the needs of geosciences and related scientific and engineering disciplines. The term is often used interchangeably with Geomatics, although they are not exactly same. The field of geomatics is a comprehensive discipline encompassing both geodesy and geoinformatics, thus offering a more extensive scope."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "geoinformatics"@en ;
-    skos:topConceptOf cs: ;
     schema:citation "https://en.wikipedia.org/wiki/Geoinformatics"^^xsd:anyURI ;
     schema:status astatus:experimental ;
 .
@@ -98,39 +86,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     skos:inScheme cs: ;
     skos:prefLabel "geomorphology"@en ;
     schema:citation "https://physicalgeography.org/geomorphology/"^^xsd:anyURI ;
-    schema:status astatus:experimental ;
-.
-
-:hydrogeochemistry
-    a skos:Concept ;
-    rdfs:isDefinedBy cs: ;
-    skos:broader :geochemistry ;
-    skos:definition "The chemistry of ground and surface waters, particularly the relationships between the chemical characteristics and quality of waters and the areal and regional geology."@en ;
-    skos:inScheme cs: ;
-    skos:prefLabel "hydrogeochemistry"@en ;
-    schema:citation "hydrogeochemistry | glossary.americangeosciences.org"^^xsd:anyURI ;
-    schema:status astatus:experimental ;
-.
-
-:hydrogeology
-    a skos:Concept ;
-    rdfs:isDefinedBy cs: ;
-    skos:broader :geology ;
-    skos:definition "Hydrogeology is defined as the study of groundwater, encompassing its origin, occurrence, movement, and quality, while also examining its interactions within the hydrologic cycle and its relationship with other water components like precipitation and streams."@en ;
-    skos:inScheme cs: ;
-    skos:prefLabel "hydrogeology"@en ;
-    schema:citation "https://www.sciencedirect.com/topics/earth-and-planetary-sciences/hydrogeology"^^xsd:anyURI ;
-    schema:status astatus:experimental ;
-.
-
-:hydrology
-    a skos:Concept ;
-    rdfs:isDefinedBy cs: ;
-    skos:definition "Hydrology is the science that encompasses the occurrence, distribution, movement and properties of the waters of the earth and their relationship with the environment within each phase of the hydrologic cycle. The water cycle, or hydrologic cycle, is a continuous process by which water is purified by evaporation and transported from the earth's surface (including the oceans) to the atmosphere and back to the land and oceans. All of the physical, chemical and biological processes involving water as it travels its various paths in the atmosphere, over and beneath the earth's surface and through growing plants, are of interest to those who study the hydrologic cycle."@en ;
-    skos:inScheme cs: ;
-    skos:prefLabel "hydrology"@en ;
-    skos:topConceptOf cs: ;
-    schema:citation "https://www.usgs.gov/water-science-school/science/what-hydrology#Hydrology"^^xsd:anyURI ;
     schema:status astatus:experimental ;
 .
 
@@ -225,11 +180,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :sample_acquisition
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
+    skos:broader :sample_acquisition_and_management ;
     skos:definition "Sample acquisition is related to the collection/procurement, handling, tracking, storing, and retrieving of primary geoscience material (typically, but not exclusively, a rock, mineral, fossil or soil) collected in the field or from materials collected in the field (e.g. drillcore)"@en ;
     skos:inScheme cs: ;
-    skos:narrower :sample_acquisition_management ;
     skos:prefLabel "sample acquisition"@en ;
-    skos:topConceptOf cs: ;
     schema:citation "https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management"^^xsd:anyURI ;
     schema:status astatus:experimental ;
 .
@@ -237,9 +191,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :data_management
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:broader :sample_acquisition_management ;
+    skos:broader :information_management ;
     skos:definition "Data Management is the development, execution, and supervision of plans, policies, programs, and practices that deliver, control, protect, and enhance the value of data and information assets throughout their lifecycles. It encompasses a range of disciplines and processes that collectively enable organizations to derive meaningful insights, make informed decisions, and maintain compliance with regulatory standards."@en ;
     skos:inScheme cs: ;
+    skos:narrower :data_acquisition ;
     skos:prefLabel "data management"@en ;
     schema:citation "https://dama.org/about-dama/what-is-data-management/"^^xsd:anyURI ;
     schema:status astatus:experimental ;
@@ -260,11 +215,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 :geochemistry
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
+    skos:broader :geology ;
     skos:definition "Geochemistry is the study of the distribution and amounts of the chemical elements in minerals, ores, rocks, soils, water, and the atmosphere, and the study of the circulation of the elements in nature, on the basis of the properties of their atoms and ions; also, the study of the distribution and abundance of isotopes, including problems of nuclear frequency and stability in the universe. A major concern of geochemistry is the synoptic evaluation of the abundances of the elements in the Earth's crust and in major classes of rocks and minerals."@en ;
     skos:inScheme cs: ;
     skos:narrower :hydrogeochemistry ;
     skos:prefLabel "geochemistry"@en ;
-    skos:topConceptOf cs: ;
     schema:citation "https://glossary.americangeosciences.org/term/geochemistry"^^xsd:anyURI ;
     schema:status astatus:experimental ;
 .
@@ -294,14 +249,41 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     schema:status astatus:experimental ;
 .
 
-:information_management
+:hydrogeochemistry
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:definition "The function of managing information as an enterprise resource, including planning, organising and staffing, and leading, directing, and controlling information."@en ;
+    skos:broader
+        :geochemistry ,
+        :hydrology ;
+    skos:definition "The chemistry of ground and surface waters, particularly the relationships between the chemical characteristics and quality of waters and the areal and regional geology."@en ;
     skos:inScheme cs: ;
-    skos:prefLabel "information management"@en ;
+    skos:prefLabel "hydrogeochemistry"@en ;
+    schema:citation "hydrogeochemistry | glossary.americangeosciences.org"^^xsd:anyURI ;
+    schema:status astatus:experimental ;
+.
+
+:hydrogeology
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader
+        :geology ,
+        :hydrology ;
+    skos:definition "Hydrogeology is defined as the study of groundwater, encompassing its origin, occurrence, movement, and quality, while also examining its interactions within the hydrologic cycle and its relationship with other water components like precipitation and streams."@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "hydrogeology"@en ;
+    schema:citation "https://www.sciencedirect.com/topics/earth-and-planetary-sciences/hydrogeology"^^xsd:anyURI ;
+    schema:status astatus:experimental ;
+.
+
+:sample_acquisition_and_management
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Sample acquisition and management is related to the collection/procurement, handling, tracking, storing, and retrieving of primary geoscience material (typically, but not exclusively, a rock, mineral, fossil or soil) collected in the field or from materials collected in the field (e.g. drillcore), as well as derived specimens from such materials for the purpose of analysis and research. Included are vocabularies related to collections as single entities."@en ;
+    skos:inScheme cs: ;
+    skos:narrower :sample_acquisition ;
+    skos:prefLabel "sample acquisition and management"@en ;
     skos:topConceptOf cs: ;
-    schema:citation "https://www.dama-uk.org/pages/glossary"^^xsd:anyURI ;
+    schema:citation "https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management"^^xsd:anyURI ;
     schema:status astatus:experimental ;
 .
 
@@ -314,6 +296,20 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     skos:narrower :ambient_noise_tomography ;
     skos:prefLabel "seismology"@en ;
     schema:citation "https://en.wikipedia.org/wiki/Seismology"^^xsd:anyURI ;
+    schema:status astatus:experimental ;
+.
+
+:hydrology
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Hydrology is the science that encompasses the occurrence, distribution, movement and properties of the waters of the earth and their relationship with the environment within each phase of the hydrologic cycle. The water cycle, or hydrologic cycle, is a continuous process by which water is purified by evaporation and transported from the earth's surface (including the oceans) to the atmosphere and back to the land and oceans. All of the physical, chemical and biological processes involving water as it travels its various paths in the atmosphere, over and beneath the earth's surface and through growing plants, are of interest to those who study the hydrologic cycle."@en ;
+    skos:inScheme cs: ;
+    skos:narrower
+        :hydrogeochemistry ,
+        :hydrogeology ;
+    skos:prefLabel "hydrology"@en ;
+    skos:topConceptOf cs: ;
+    schema:citation "https://www.usgs.gov/water-science-school/science/what-hydrology#Hydrology"^^xsd:anyURI ;
     schema:status astatus:experimental ;
 .
 
@@ -345,17 +341,34 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     schema:status astatus:experimental ;
 .
 
-:sample_acquisition_management
+:information_management
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
-    skos:broader :data_management ;
-    skos:definition "Sample acquisition and management is related to the collection/procurement, handling, tracking, storing, and retrieving of primary geoscience material (typically, but not exclusively, a rock, mineral, fossil or soil) collected in the field or from materials collected in the field (e.g. drillcore), as well as derived specimens from such materials for the purpose of analysis and research. Included are vocabularies related to collections as single entities."@en ;
+    skos:definition "The function of managing information as an enterprise resource, including planning, organising and staffing, and leading, directing, and controlling information."@en ;
     skos:inScheme cs: ;
     skos:narrower
-        :data_acquisition ,
-        :sample_acquisition ;
-    skos:prefLabel "sample acquisition and management"@en ;
-    schema:citation "https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management"^^xsd:anyURI ;
+        :data_management ,
+        :geoinformatics ;
+    skos:prefLabel "information management"@en ;
+    skos:topConceptOf cs: ;
+    schema:citation "https://www.dama-uk.org/pages/glossary"^^xsd:anyURI ;
+    schema:status astatus:experimental ;
+.
+
+:geophysics
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :geology ;
+    skos:definition "Geophysics is the investigation of the solid and molten Earth using physical principles which allow studies on large scales and of the otherwise inaccessible deep Earth. Geophysical methods are used to study large scale Earth Structure, to measure the exact shape and size of the planet (Geodesy), to study the dynamics of the Earth’s interior and tectonic plates (Geodynamics), to study the history of Earth’s magnetic field and its present state (Geomagnetism), to study the physical properties of rocks and minerals at or near the surface, as well as those in the core (Mineral Physics), and finally, to study the physical causes and effects of earthquakes (Seismology)."@en ;
+    skos:inScheme cs: ;
+    skos:narrower
+        :geodesy ,
+        :magnetotellurics ,
+        :petrophysics ,
+        :radiometrics ,
+        :seismology ;
+    skos:prefLabel "geophysics"@en ;
+    schema:citation "https://www.sciencedirect.com/science/chapter/referencework/pii/B9780124095489053549#s0015"^^xsd:anyURI ;
     schema:status astatus:experimental ;
 .
 
@@ -365,7 +378,9 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     skos:definition "Geology is the study of the materials of which the planet Earth is made, the processes that act on these materials, the products formed, and the history of the planet and its life forms since its origin."@en ;
     skos:inScheme cs: ;
     skos:narrower
+        :geochemistry ,
         :geochronology ,
+        :geophysics ,
         :hydrogeology ,
         :marine_geoscience ,
         :palaeontology ,
@@ -376,40 +391,22 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     schema:status astatus:experimental ;
 .
 
-:geophysics
-    a skos:Concept ;
-    rdfs:isDefinedBy cs: ;
-    skos:definition "Geophysics is the investigation of the solid and molten Earth using physical principles which allow studies on large scales and of the otherwise inaccessible deep Earth. Geophysical methods are used to study large scale Earth Structure, to measure the exact shape and size of the planet (Geodesy), to study the dynamics of the Earth’s interior and tectonic plates (Geodynamics), to study the history of Earth’s magnetic field and its present state (Geomagnetism), to study the physical properties of rocks and minerals at or near the surface, as well as those in the core (Mineral Physics), and finally, to study the physical causes and effects of earthquakes (Seismology)."@en ;
-    skos:inScheme cs: ;
-    skos:narrower
-        :geodesy ,
-        :magnetotellurics ,
-        :petrophysics ,
-        :radiometrics ,
-        :seismology ;
-    skos:prefLabel "geophysics"@en ;
-    skos:topConceptOf cs: ;
-    schema:citation "https://www.sciencedirect.com/science/chapter/referencework/pii/B9780124095489053549#s0015"^^xsd:anyURI ;
-    schema:status astatus:experimental ;
-.
-
 cs:
     a skos:ConceptScheme ;
     owl:versionIRI :1.0 ;
     skos:definition "These geoscience data themes are used by Geoscience Australia to enable sorting of content in their registers."@en ;
     skos:hasTopConcept
         :administration ,
-        :data_management ,
         :earth_observation ,
-        :geochemistry ,
         :geography ,
-        :geoinformatics ,
         :geology ,
-        :geophysics ,
         :hydrology ,
         :information_management ,
-        :legislation ;
-    skos:historyNote "This vocabulary is a refresh of a previous GA data classification. The definitions have been sourced from other Australian Geological Surveys where possible. This was created for the purpose of grouping related vocabularies and other GA products to enable easy sorting by data type." ;
+        :legislation ,
+        :sample_acquisition_and_management ;
+    skos:historyNote """2026-05: Nested geochem and geophys under geology
+
+This vocabulary is a refresh of a previous GA data classification. The definitions have been sourced from other Australian Geological Surveys where possible. This was created for the purpose of grouping related vocabularies and other GA products to enable easy sorting by data type.""" ;
     skos:prefLabel "GA Register Data Themes"@en ;
     prov:qualifiedAttribution
         [
@@ -429,7 +426,7 @@ cs:
             schema:url ""^^xsd:anyURI ;
         ] ;
     schema:dateCreated "2025-12-11"^^xsd:date ;
-    schema:dateModified "2026-04-29"^^xsd:date ;
+    schema:dateModified "2026-05-15"^^xsd:date ;
     schema:identifier "https://pid.geoscience.gov.au/dataset/ga/150902"^^gavoc:eCatID ;
     schema:keywords :information_management ;
     schema:publisher <https://linked.data.gov.au/org/ga> ;
