@@ -42,11 +42,20 @@ For example, if a change to a vocab is proposed, a technical _Pull Request_ (PR)
 
 The Data Catalogue Team, Subject-Matter Experts and even the people proposing changes - 'Submitters' - all have roles defined by ISO 19135. 
 
-![](style/changes-workflow.svg)
+The target state workflow is as below (perhaps not completely implemented yet):
 
-### Technical data manipulation
+<img src="style/changes-workflow.svg" alt="workflow diagram" style="width:75%;" />
 
+### Technical workflows
 
+GitHub Actions, defined in `.github/workflows/` trigger on the creation of Pull Requests - for validation - and on merge - for pushing to DBs.
+
+The validation workflows triggers on the creation of a PR to the _master_ or _develop_ branches and use [Prez Manifest](https://github.com/Kurrawong/prezmanifest/)'s `validate` command to validate all resources indicated as conforming to profiles in the `manifest.ttl` file. Currently, all vocabs are indicated as conforming to [VocPub](https://linked.data.gov.au/def/vocpub) as per the line `dcterms:conformsTo <https://linked.data.gov.au/def/vocpub/validator> ;`.
+
+The push workflows trigger on merger into _master_ or _develop_ branches uses the Prez Manifest `sync` command which automatically detects what files have changes and pushes only them.
+
+> [!TIP]
+> PrezManifest's `sync` command detects changes only based on a resources `schema:dateModified` and `schema:version` predicate values. If there is a problem with change detection, use the [kurra toolkit's GSP commands](https://github.com/kurrawong/kurra) which Prez Manifest uses under-te-hood - to manually override data on the server with files, e.g. `kurra db gsp put {FILE} -g {GRAPH-IRI} {SPARQL-ENDPOINT}`
 
 ## License  
 
