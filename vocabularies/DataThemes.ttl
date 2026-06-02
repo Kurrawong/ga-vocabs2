@@ -430,6 +430,6 @@ This vocabulary is a refresh of a previous GA data classification. The definitio
     schema:identifier "https://pid.geoscience.gov.au/dataset/ga/150902"^^gavoc:eCatID ;
     schema:keywords :information_management ;
     schema:publisher <https://linked.data.gov.au/org/ga> ;
-    schema:status astatus:experimental ;
+    schema:status astatus:stable ;
     schema:version "1" ;
 .
